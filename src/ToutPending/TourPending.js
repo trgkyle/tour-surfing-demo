@@ -1,9 +1,17 @@
+import Tour from "../Tour/Tour";
+
 const TourPending = () => {
-    return(
-        <div>
-            <span>Tour pending</span>
-        </div>
-    )
+  return (
+    <div class="row">
+      <Tour />
+      <Tour />
+      <Tour />
+      <Tour />
+      <Tour />
+      <Tour />
+      <Tour />
+    </div>
+  );
 };
 
 export default TourPending;

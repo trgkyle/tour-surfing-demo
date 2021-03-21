@@ -2,8 +2,21 @@ import logo from "./logo.svg";
 import "./App.css";
 import Tour from "./Tour/Tour";
 import { useState } from "react";
+import TourManage from "./TourManage/TourManage";
+import TourPending from "./ToutPending/TourPending";
+import ConfigSystem from "./ConfigSystem/ConfigSystem";
 function App() {
   const [active, setActive] = useState("tour-list");
+  const renderContent = () => {
+    switch (active) {
+      case "tour-list":
+        return <TourManage />;
+      case "tour-pending":
+        return <TourPending />;
+      case "config":
+        return <ConfigSystem />;
+    }
+  };
   return (
     <div className="App">
       {/* <header className="App-header">a
@@ -92,47 +105,7 @@ function App() {
                 role="tabpanel"
                 aria-labelledby="home-tab"
               >
-                <div class="row row-cols-1 row-cols-md-4 g-4 tour-wrapper">
-                  <Tour />
-                  <Tour />
-                  <Tour />
-                  <Tour />
-                  <Tour />
-                  <Tour />
-                  <Tour />
-                </div>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                Placeholder content for the tab panel. This one relates to the
-                home tab. Takes you miles high, so high, 'cause she’s got that
-                one international smile. There's a stranger in my bed, there's a
-                pounding in my head. Oh, no. In another life I would make you
-                stay. ‘Cause I, I’m capable of anything. Suiting up for my
-                crowning battle. Used to steal your parents' liquor and climb to
-                the roof. Tone, tan fit and ready, turn it up cause its gettin'
-                heavy. Her love is like a drug. I guess that I forgot I had a
-                choice.
-              </div>
-              <div
-                class="tab-pane fade"
-                id="contact"
-                role="tabpanel"
-                aria-labelledby="contact-tab"
-              >
-                Placeholder content for the tab panel. This one relates to the
-                home tab. Takes you miles high, so high, 'cause she’s got that
-                one international smile. There's a stranger in my bed, there's a
-                pounding in my head. Oh, no. In another life I would make you
-                stay. ‘Cause I, I’m capable of anything. Suiting up for my
-                crowning battle. Used to steal your parents' liquor and climb to
-                the roof. Tone, tan fit and ready, turn it up cause its gettin'
-                heavy. Her love is like a drug. I guess that I forgot I had a
-                choice.
+                <div className="tour-wrapper">{renderContent()}</div>
               </div>
             </div>
           </div>
