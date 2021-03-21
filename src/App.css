@@ -14,7 +14,11 @@
   margin-left: 5px;
 }
 
+.tour {
+  width: 100%;
+}
 .tour img {
+  min-width: 200px;
   max-width: 300px;
   max-height: 200px;
   object-fit: cover;

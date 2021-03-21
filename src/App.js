@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Tour from "./Tour/Tour";
+import Tour from "./Tour/TourOne";
 import { useState } from "react";
 import TourManage from "./TourManage/TourManage";
 import TourPending from "./ToutPending/TourPending";

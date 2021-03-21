@@ -1,15 +1,15 @@
-import Tour from "../Tour/Tour";
+import TourTwo from "../Tour/TourTwo";
 
 const TourPending = () => {
   return (
     <div class="row">
-      <Tour />
-      <Tour />
-      <Tour />
-      <Tour />
-      <Tour />
-      <Tour />
-      <Tour />
+      <TourTwo />
+      <TourTwo />
+      <TourTwo />
+      <TourTwo />
+      <TourTwo />
+      <TourTwo />
+      <TourTwo />
     </div>
   );
 };
