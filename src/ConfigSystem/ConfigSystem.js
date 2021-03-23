@@ -23,8 +23,8 @@ const ConfigSystem = () => {
 
   return (
     <div>
-      <div class="input-group mb-3">
-        <span class="input-group-text">
+      <div className="input-group mb-3">
+        <span className="input-group-text">
           Nhập số lượng bài viết muốn thu thập
         </span>
         <input
@@ -33,18 +33,18 @@ const ConfigSystem = () => {
             setTourLength(+e.target.value);
           }}
           type="number"
-          class="form-control"
+          className="form-control"
           aria-label="Amount (to the nearest dollar)"
         />
       </div>
       <div className="btn-list">
-        <button type="button" class="btn btn-primary" onClick={()=> {crawlTours("/facebook-crawler-active")}}>
+        <button type="button" className="btn btn-primary" onClick={()=> {crawlTours("/facebook-crawler-active")}}>
           Thu thập Facebook
         </button>
-        <button type="button" class="btn btn-secondary">
+        <button type="button" className="btn btn-secondary" onClick={()=> {crawlTours("/chotot-crawler-active")}}>
           Thu thập Chotot
         </button>
-        <button type="button" class="btn btn-success">
+        <button type="button" className="btn btn-success">
           Thu thập VietTravel
         </button>
       </div>
