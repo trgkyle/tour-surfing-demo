@@ -7,7 +7,7 @@
   flex-direction: column; */
 }
 .tour-wrapper .card {
- margin: 1rem; 
+  margin: 1rem;
 }
 
 .container ul li {
@@ -17,10 +17,24 @@
 .tour {
   width: 100%;
 }
-.tour img {
+
+.tour .card-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tour .card-img-top {
   min-width: 200px;
   max-width: 300px;
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+
+
+.btn-list button {
+  margin-left: 10px;
 }
