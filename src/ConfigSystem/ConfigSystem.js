@@ -1,12 +1,48 @@
+import { useState, useEffect } from "react";
+import { BACK_END } from "../config";
 const ConfigSystem = () => {
+  const [tourLength, setTourLength] = useState(1);
+
+  async function crawlTours(url) {
+    try {
+      const response = await fetch(BACK_END + url + "?crawlerLength=" + tourLength, {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      }).then((response) => response.json());
+    } catch (e) {
+      console.log("Error set crawler");
+    }
+  }
+
   return (
     <div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          Nhập số lượng bài viết muốn thu thập
+        </span>
+        <input
+          value={tourLength}
+          onChange={(e) => {
+            setTourLength(+e.target.value);
+          }}
+          type="number"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"
+        />
+      </div>
       <div className="btn-list">
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" onClick={()=> {crawlTours("/facebook-crawler-active")}}>
           Thu thập Facebook
         </button>
         <button type="button" class="btn btn-secondary">
-          Thu thập Chotot 
+          Thu thập Chotot
         </button>
         <button type="button" class="btn btn-success">
           Thu thập VietTravel
