@@ -135,7 +135,13 @@ const TourModal = ({ tourData, setModal, fetchData }) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              handleClose();
+              censorTour(true, tourData.id);
+            }}
+          >
             Lưu và đăng
           </Button>
           <Button

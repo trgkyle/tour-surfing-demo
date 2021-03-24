@@ -91,7 +91,7 @@ function App() {
                 aria-controls="contact"
                 aria-selected="false"
               >
-                Đồng hồ hệ thống
+                Cài đặt hệ thống
               </button>
             </li>
           </ul>
