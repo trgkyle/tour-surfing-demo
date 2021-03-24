@@ -17,7 +17,9 @@
 .tour {
   width: 100%;
 }
-
+.tour-one .card {
+  height: 95%;
+}
 .tour .card-content {
   display: -webkit-box;
   -webkit-line-clamp: 2;
