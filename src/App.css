@@ -25,14 +25,29 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.tour .card-img-top {
+
+.tour div.card-img-top {
+  min-width: 200px;
+  max-width: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.tour img.card-img-top:nth-child(1) {
   min-width: 200px;
   max-width: 300px;
   height: 200px;
   object-fit: cover;
   object-position: 50% 50%;
 }
-
+.tour img.card-img-top:not(:nth-child(1)) {
+  padding: 2px;
+  /* min-width: 200px; */
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
 
 
 .btn-list button {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BACK_END } from "../config";
 import TourModal from "../ToutPending/TourModal";
-const Tour = ({ tourData,fetchData }) => {
+const Tour = ({ tourData, fetchData }) => {
   const [modalShow, setModalShow] = useState(false);
 
   async function censorTour(status, tourID) {
@@ -29,17 +29,27 @@ const Tour = ({ tourData,fetchData }) => {
   return (
     <div className="tour">
       {modalShow && (
-        <TourModal fetchData={fetchData} tourData={tourData} setModal={(e) => setModalShow(e)} />
+        <TourModal
+          fetchData={fetchData}
+          tourData={tourData}
+          setModal={(e) => setModalShow(e)}
+        />
       )}
       <div className="card flex-row">
-        <img
-          src={
-            tourData.image[0] ??
-            "https://dulichsaigon.vn/wp-content/uploads/2019/09/default-placeholder-1024x1024-570x321.png"
-          }
-          className="card-img-top"
-          alt="..."
-        />
+        <div className="card-img-top">
+          {tourData.image.map((image, index) => {
+            return <img src={image} className="card-img-top" alt="..." />;
+          })}
+
+          {/* <img
+            src={
+              tourData.image[0] ??
+              "https://dulichsaigon.vn/wp-content/uploads/2019/09/default-placeholder-1024x1024-570x321.png"
+            }
+            className="card-img-top"
+            alt="..."
+          /> */}
+        </div>
         <div className="card-body">
           <h5 className="card-title">{tourData.title}</h5>
           <div
