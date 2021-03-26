@@ -44,7 +44,7 @@ const ConfigSystem = () => {
         <button type="button" className="btn btn-secondary" onClick={()=> {crawlTours("/chotot-crawler-active")}}>
           Thu thập Chotot
         </button>
-        <button type="button" className="btn btn-success">
+        <button type="button" className="btn btn-success" onClick={()=> {crawlTours("/travelcom-crawler-active")}}>
           Thu thập VietTravel
         </button>
       </div>
